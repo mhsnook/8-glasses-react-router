@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--toastify-color-light: theme('colors.white');
+	--toastify-color-dark: theme('colors.gray.800');
+	--toastify-color-info: theme('colors.primary.500');
+	--toastify-color-success: theme('colors.success.500');
+	--toastify-color-warning: theme('colors.warning.500');
+	--toastify-color-error: theme('colors.error.500');
+}
+
+@layer base {
+	html {
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	body {
+		@apply bg-slate-50 text-secondary-950 antialiased;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-semibold leading-tight;
+	}
+
+	h1 {
+		@apply text-3xl;
+	}
+
+	h2 {
+		@apply text-2xl;
+	}
+
+	h3 {
+		@apply text-xl;
+	}
+
+	h4 {
+		@apply text-lg;
+	}
+}
+
+@layer components {
+	.btn {
+		@apply flex items-center justify-center gap-1.5 rounded-lg px-4 py-2 font-medium transition focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70;
+	}
+
+	.btn-primary {
+		@apply bg-primary-600 text-white hover:bg-primary-700;
+	}
+
+	.btn-secondary {
+		@apply bg-secondary-200 text-secondary-900 hover:bg-secondary-300;
+	}
+
+	.btn-accent {
+		@apply bg-accent-600 text-white hover:bg-accent-700;
+	}
+
+	.btn-outline {
+		@apply border border-secondary-300 bg-white text-secondary-900 hover:bg-secondary-50;
+	}
+
+	.btn-ghost {
+		@apply text-secondary-600 hover:bg-secondary-100 hover:text-secondary-900;
+	}
+
+	.btn-sm {
+		@apply px-3 py-1.5 text-sm;
+	}
+
+	.btn-lg {
+		@apply px-6 py-3 text-lg;
+	}
+
+	.input {
+		@apply w-full rounded-lg border border-secondary-300 px-3 py-2 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:cursor-not-allowed disabled:bg-secondary-50 disabled:opacity-70;
+	}
+
+	.input-sm {
+		@apply py-1.5 text-sm;
+	}
+
+	.label {
+		@apply mb-1 block text-sm font-medium text-secondary-700;
+	}
+
+	.card {
+		@apply overflow-hidden rounded-xl bg-white shadow-sm;
+	}
+
+	.card-header {
+		@apply border-b border-secondary-200 px-6 py-4;
+	}
+
+	.card-body {
+		@apply p-6;
+	}
+
+	.card-footer {
+		@apply border-t border-secondary-200 bg-secondary-50 px-6 py-4;
+	}
+}
+
+@layer utilities {
+	.grid-auto-fit {
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min, 16rem)), 1fr));
+	}
+}
